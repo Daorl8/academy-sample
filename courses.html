@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강좌 안내 · 정상학원</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="common.css" />
+  <style>
+    .course-section { border-bottom: 1px solid var(--border); }
+    .course-section:last-child { border-bottom: none; }
+    .course-header { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+    .course-emoji { font-size: 2.2rem; }
+    .course-title-group h2 { font-size: 1.6rem; font-weight: 700; color: var(--navy); }
+    .course-title-group p { font-size: 0.85rem; color: var(--gray); margin-top: 4px; }
+    .class-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+    .class-card { border: 1px solid var(--border); padding: 28px 24px; }
+    .class-level { display: inline-block; padding: 4px 12px; background: var(--navy); color: #fff; font-size: 0.7rem; font-weight: 500; margin-bottom: 14px; }
+    .class-level.mid { background: var(--gray); }
+    .class-level.adv { background: var(--red); }
+    .class-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .class-info { font-size: 0.82rem; color: var(--gray); line-height: 1.9; }
+    .class-info strong { color: var(--navy); font-weight: 500; }
+    .timetable { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .timetable th { background: var(--light); font-size: 0.75rem; font-weight: 500; color: var(--navy); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .timetable td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 0.82rem; color: #333; }
+    .timetable tr:last-child td { border-bottom: none; }
+    .timetable tr:hover td { background: var(--light); }
+    .tag-open { display: inline-block; padding: 3px 10px; background: #dcfce7; color: #166534; font-size: 0.68rem; font-weight: 500; border-radius: 2px; }
+    .tag-full { display: inline-block; padding: 3px 10px; background: #fee2e2; color: #991b1b; font-size: 0.68rem; font-weight: 500; border-radius: 2px; }
+    @media (max-width: 860px) { .class-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">정상<span>학원</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="courses.html" class="active">강좌 안내</a></li>
+        <li><a href="teachers.html">강사 소개</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="consult.html">상담 신청</a></li>
+      </ul>
+    </div>
+    <a href="consult.html" class="nav-cta">무료 상담 신청</a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="nav-drawer" id="drawer">
+    <a href="index.html" onclick="closeMenu()">홈</a>
+    <a href="courses.html" onclick="closeMenu()">강좌 안내</a>
+    <a href="teachers.html" onclick="closeMenu()">강사 소개</a>
+    <a href="notice.html" onclick="closeMenu()">공지사항</a>
+    <a href="consult.html" onclick="closeMenu()">상담 신청</a>
+  </div>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="section-tag">Courses</div>
+      <h1>강좌 안내</h1>
+      <div class="breadcrumb"><a href="index.html">홈</a> · 강좌 안내</div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+
+    <!-- 국어 -->
+    <div class="course-section" style="padding-bottom:64px; margin-bottom:64px;">
+      <div class="course-header">
+        <div class="course-emoji">📖</div>
+        <div class="course-title-group">
+          <h2>국어</h2>
+          <p>문학·독서·언어와 매체·화법과 작문 전 영역</p>
+        </div>
+      </div>
+      <div class="class-grid">
+        <div class="class-card">
+          <div class="class-level">기초반</div>
+          <div class="class-name">국어 기초 완성반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 김지수 강사<br>
+            <strong>정원</strong>: 12명<br>
+            <strong>수업 시간</strong>: 주 3회 · 100분<br>
+            <strong>수강료</strong>: 월 320,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level mid">수능완성반</div>
+          <div class="class-name">수능 국어 완성반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 김지수 강사<br>
+            <strong>정원</strong>: 10명<br>
+            <strong>수업 시간</strong>: 주 3회 · 120분<br>
+            <strong>수강료</strong>: 월 380,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level adv">최상위반</div>
+          <div class="class-name">국어 1등급 집중반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 김지수 강사<br>
+            <strong>정원</strong>: 8명<br>
+            <strong>수업 시간</strong>: 주 4회 · 120분<br>
+            <strong>수강료</strong>: 월 480,000원
+          </div>
+        </div>
+      </div>
+      <table class="timetable">
+        <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td>기초반</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>수능완성반</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>최상위반</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>10:00</td><td><span class="tag-full">마감</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 영어 -->
+    <div class="course-section" style="padding-bottom:64px; margin-bottom:64px;">
+      <div class="course-header">
+        <div class="course-emoji">🔤</div>
+        <div class="course-title-group">
+          <h2>영어</h2>
+          <p>독해·듣기·어법·EBS 연계 완벽 대비</p>
+        </div>
+      </div>
+      <div class="class-grid">
+        <div class="class-card">
+          <div class="class-level">기초반</div>
+          <div class="class-name">영어 기초 독해반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 이수연 강사<br>
+            <strong>정원</strong>: 12명<br>
+            <strong>수업 시간</strong>: 주 3회 · 100분<br>
+            <strong>수강료</strong>: 월 300,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level mid">수능완성반</div>
+          <div class="class-name">수능 영어 완성반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 이수연 강사<br>
+            <strong>정원</strong>: 10명<br>
+            <strong>수업 시간</strong>: 주 3회 · 120분<br>
+            <strong>수강료</strong>: 월 360,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level adv">1등급반</div>
+          <div class="class-name">영어 1등급 집중반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 이수연 강사<br>
+            <strong>정원</strong>: 8명<br>
+            <strong>수업 시간</strong>: 주 4회 · 100분<br>
+            <strong>수강료</strong>: 월 440,000원
+          </div>
+        </div>
+      </div>
+      <table class="timetable">
+        <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td>기초반</td><td>—</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td>10:00</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>수능완성반</td><td>—</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td>13:00</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>1등급반</td><td>17:00</td><td>—</td><td>17:00</td><td>—</td><td>17:00</td><td>—</td><td><span class="tag-full">마감</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 수학 -->
+    <div class="course-section" style="padding-bottom:64px;">
+      <div class="course-header">
+        <div class="course-emoji">🔢</div>
+        <div class="course-title-group">
+          <h2>수학</h2>
+          <p>수학1·수학2·미적분·확통·기하 전 과목</p>
+        </div>
+      </div>
+      <div class="class-grid">
+        <div class="class-card">
+          <div class="class-level">개념완성반</div>
+          <div class="class-name">수학 개념 완성반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 박민준 강사<br>
+            <strong>정원</strong>: 12명<br>
+            <strong>수업 시간</strong>: 주 3회 · 120분<br>
+            <strong>수강료</strong>: 월 350,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level mid">유형훈련반</div>
+          <div class="class-name">수능 수학 유형훈련반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 최준혁 강사<br>
+            <strong>정원</strong>: 10명<br>
+            <strong>수업 시간</strong>: 주 3회 · 120분<br>
+            <strong>수강료</strong>: 월 400,000원
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-level adv">킬러문항반</div>
+          <div class="class-name">킬러문항 집중반</div>
+          <div class="class-info">
+            <strong>담당 강사</strong>: 박민준 강사<br>
+            <strong>정원</strong>: 8명<br>
+            <strong>수업 시간</strong>: 주 4회 · 120분<br>
+            <strong>수강료</strong>: 월 520,000원
+          </div>
+        </div>
+      </div>
+      <table class="timetable">
+        <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td>개념완성반</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>유형훈련반</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>10:00</td><td><span class="tag-open">모집중</span></td></tr>
+          <tr><td>킬러문항반</td><td>19:00</td><td>—</td><td>19:00</td><td>—</td><td>19:00</td><td>13:00</td><td><span class="tag-full">마감</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <a href="consult.html" class="btn-primary">수강 상담 신청하기</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">정상<span>학원</span></div><div class="footer-info">서울특별시 ○○구 ○○로 00길 00 · 대표번호: 02-0000-0000<br>운영시간: 평일 09:00 – 22:00 · 토요일 09:00 – 18:00</div></div>
+      <div class="footer-links"><a href="courses.html">강좌 안내</a><a href="teachers.html">강사 소개</a><a href="notice.html">공지사항</a><a href="consult.html">상담 신청</a></div>
+    </div>
+    <div class="footer-copy">© 2025 정상학원. All rights reserved.</div>
+  </footer>
+  <a href="consult.html" class="float-btn" id="floatBtn">무료 상담 신청</a>
+  <script src="common.js"></script>
+  <script>
+    const floatBtn = document.getElementById('floatBtn');
+    window.addEventListener('scroll', () => { floatBtn.classList.toggle('visible', window.scrollY > 200); });
+  </script>
+</body>
+</html>
