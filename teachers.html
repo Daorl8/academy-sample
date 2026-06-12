@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강사 소개 · 정상학원</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="common.css" />
+  <style>
+    .teachers-full { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .teacher-full-card { display: grid; grid-template-columns: 240px 1fr; gap: 36px; padding: 40px; border: 1px solid var(--border); }
+    .teacher-full-photo { aspect-ratio: 3/4; overflow: hidden; flex-shrink: 0; }
+    .teacher-full-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .teacher-subject-badge { display: inline-block; padding: 5px 14px; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 500; margin-bottom: 12px; }
+    .teacher-full-name { font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .teacher-full-intro { font-size: 0.85rem; color: var(--gray); line-height: 1.9; margin-bottom: 20px; }
+    .teacher-career-list { display: flex; flex-direction: column; gap: 8px; }
+    .teacher-career-item { display: flex; gap: 12px; font-size: 0.82rem; }
+    .career-dot { color: var(--red); flex-shrink: 0; }
+    .career-text { color: #444; }
+    @media (max-width: 1024px) { .teachers-full { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .teacher-full-card { grid-template-columns: 1fr; }
+      .teacher-full-photo { aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">정상<span>학원</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="courses.html">강좌 안내</a></li>
+        <li><a href="teachers.html" class="active">강사 소개</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="consult.html">상담 신청</a></li>
+      </ul>
+    </div>
+    <a href="consult.html" class="nav-cta">무료 상담 신청</a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="nav-drawer" id="drawer">
+    <a href="index.html" onclick="closeMenu()">홈</a>
+    <a href="courses.html" onclick="closeMenu()">강좌 안내</a>
+    <a href="teachers.html" onclick="closeMenu()">강사 소개</a>
+    <a href="notice.html" onclick="closeMenu()">공지사항</a>
+    <a href="consult.html" onclick="closeMenu()">상담 신청</a>
+  </div>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="section-tag">Instructors</div>
+      <h1>강사 소개</h1>
+      <div class="breadcrumb"><a href="index.html">홈</a> · 강사 소개</div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="teachers-full">
+      <div class="teacher-full-card">
+        <div class="teacher-full-photo">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=533&q=80&auto=format&fit=crop" alt="김지수 강사" />
+        </div>
+        <div>
+          <div class="teacher-subject-badge">국어</div>
+          <div class="teacher-full-name">김지수 강사</div>
+          <p class="teacher-full-intro">수능 국어를 15년간 가르치며 수많은 학생들이 1등급을 달성하는 것을 함께했습니다. 어떤 지문이 나와도 흔들리지 않는 독해 체계를 만들어드립니다.</p>
+          <div class="teacher-career-list">
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">서울대학교 국어교육과 졸업</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">전국 모의고사 출제 위원 역임</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수능 국어 강의 경력 15년</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">담당반 평균 1등급 비율 78%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="teacher-full-card">
+        <div class="teacher-full-photo">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=533&q=80&auto=format&fit=crop" alt="박민준 강사" />
+        </div>
+        <div>
+          <div class="teacher-subject-badge">수학</div>
+          <div class="teacher-full-name">박민준 강사</div>
+          <p class="teacher-full-intro">수학의 본질적인 개념 이해에서 출발해 킬러문항까지 완성하는 커리큘럼으로 학생들의 수학 실력을 근본적으로 끌어올립니다.</p>
+          <div class="teacher-career-list">
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">KAIST 수학과 졸업</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수능 수학 강의 경력 12년</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">SKY 수학과 합격생 다수 배출</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수능 수학 만점자 지도 경험 보유</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="teacher-full-card">
+        <div class="teacher-full-photo">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=533&q=80&auto=format&fit=crop" alt="이수연 강사" />
+        </div>
+        <div>
+          <div class="teacher-subject-badge">영어</div>
+          <div class="teacher-full-name">이수연 강사</div>
+          <p class="teacher-full-intro">수능 영어 절대평가 전환 이후 1등급 유지의 핵심을 정확히 파악하고 있습니다. EBS 연계율 높은 효율적인 학습법으로 빠른 성적 향상을 이끌어냅니다.</p>
+          <div class="teacher-career-list">
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">연세대학교 영어영문학과 졸업</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수능 영어 강의 경력 10년</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">담당반 1등급 비율 평균 82%</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">EBS 교재 검토 위원</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="teacher-full-card">
+        <div class="teacher-full-photo">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=533&q=80&auto=format&fit=crop" alt="최준혁 강사" />
+        </div>
+        <div>
+          <div class="teacher-subject-badge">수학</div>
+          <div class="teacher-full-name">최준혁 강사</div>
+          <p class="teacher-full-intro">수학을 어렵게 느끼는 학생들의 심리를 잘 이해하고, 단계별로 자신감을 쌓아가도록 이끄는 강의로 많은 학생들에게 사랑받고 있습니다.</p>
+          <div class="teacher-career-list">
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">고려대학교 수학과 졸업</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수능 수학 강의 경력 8년</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">중위권 → 상위권 전환 전문</span></div>
+            <div class="teacher-career-item"><span class="career-dot">●</span><span class="career-text">수강생 평균 성적 향상 1.8등급</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">정상<span>학원</span></div><div class="footer-info">서울특별시 ○○구 ○○로 00길 00 · 대표번호: 02-0000-0000<br>운영시간: 평일 09:00 – 22:00 · 토요일 09:00 – 18:00</div></div>
+      <div class="footer-links"><a href="courses.html">강좌 안내</a><a href="teachers.html">강사 소개</a><a href="notice.html">공지사항</a><a href="consult.html">상담 신청</a></div>
+    </div>
+    <div class="footer-copy">© 2025 정상학원. All rights reserved.</div>
+  </footer>
+  <a href="consult.html" class="float-btn" id="floatBtn">무료 상담 신청</a>
+  <script src="common.js"></script>
+  <script>window.addEventListener('scroll', () => { document.getElementById('floatBtn').classList.toggle('visible', window.scrollY > 200); });</script>
+</body>
+</html>
