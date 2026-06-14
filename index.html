@@ -37,11 +37,11 @@
     .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .course-card { border: 1px solid var(--border); padding: 32px 28px; transition: border-color 0.2s, box-shadow 0.2s; }
     .course-card:hover { border-color: var(--navy); box-shadow: 0 4px 20px rgba(26,58,107,0.08); }
-    .course-icon { font-size: 2rem; margin-bottom: 16px; }
+    .course-icon { width: 36px; height: 3px; background: var(--red); margin-bottom: 20px; }
     .course-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .course-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
     .course-levels { display: flex; gap: 6px; flex-wrap: wrap; }
-    .level-tag { padding: 4px 10px; border: 1px solid var(--border); font-size: 0.7rem; color: var(--gray); }
+    .level-tag { padding: 4px 10px; border: 1px solid var(--border); font-size: 0.78rem; color: var(--gray); }
     .course-link { display: inline-block; margin-top: 20px; font-size: 0.78rem; font-weight: 500; color: var(--navy); border-bottom: 1px solid var(--navy); padding-bottom: 2px; transition: color 0.2s; }
     .course-link:hover { color: var(--red); border-color: var(--red); }
 
@@ -52,7 +52,7 @@
     .teacher-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .teacher-card:hover .teacher-photo img { transform: scale(1.04); }
     .teacher-info { padding: 20px; }
-    .teacher-subject { font-size: 0.7rem; font-weight: 500; color: var(--red); letter-spacing: 0.06em; margin-bottom: 6px; }
+    .teacher-subject { font-size: 0.78rem; font-weight: 500; color: var(--red); letter-spacing: 0.06em; margin-bottom: 6px; }
     .teacher-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .teacher-career { font-size: 0.78rem; color: var(--gray); line-height: 1.7; }
 
@@ -117,7 +117,7 @@
 
   <section id="hero">
     <div class="hero-left">
-      <div class="hero-tag">2025 수능 대비 · 정상학원</div>
+      <div class="hero-tag">2027 수능 대비 · 정상학원</div>
       <h1 class="hero-title">목표는 하나,<br><em>정상에 서는 것</em></h1>
       <p class="hero-desc">검증된 커리큘럼과 전문 강사진으로<br>수능 최상위권을 목표로 함께 달립니다.</p>
       <div class="hero-btns">
@@ -146,21 +146,21 @@
       </div>
       <div class="courses-grid">
         <div class="course-card">
-          <div class="course-icon">📖</div>
+          <div class="course-icon"></div>
           <div class="course-name">국어</div>
           <p class="course-desc">문학·독서·언어와 매체 전 영역 완성. 비문학 지문 독해력과 문학 작품 분석 능력을 체계적으로 키웁니다.</p>
           <div class="course-levels"><span class="level-tag">기초반</span><span class="level-tag">수능완성반</span><span class="level-tag">최상위반</span></div>
           <a href="courses.html" class="course-link">자세히 보기 →</a>
         </div>
         <div class="course-card">
-          <div class="course-icon">🔤</div>
+          <div class="course-icon"></div>
           <div class="course-name">영어</div>
           <p class="course-desc">수능 영어 1등급을 목표로 독해·듣기·어법을 집중 훈련합니다. EBS 연계 문항 완벽 대비.</p>
           <div class="course-levels"><span class="level-tag">기초반</span><span class="level-tag">수능완성반</span><span class="level-tag">1등급반</span></div>
           <a href="courses.html" class="course-link">자세히 보기 →</a>
         </div>
         <div class="course-card">
-          <div class="course-icon">🔢</div>
+          <div class="course-icon"></div>
           <div class="course-name">수학</div>
           <p class="course-desc">수학1·수학2·미적분·확통·기하 전 과목 개설. 개념부터 킬러문항까지 단계별 완성.</p>
           <div class="course-levels"><span class="level-tag">개념완성반</span><span class="level-tag">유형훈련반</span><span class="level-tag">킬러문항반</span></div>
@@ -179,19 +179,19 @@
       </div>
       <div class="teachers-grid">
         <div class="teacher-card">
-          <div class="teacher-photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=533&q=80&auto=format&fit=crop" alt="김지수 강사" /></div>
+          <div class="teacher-photo"><div class="teacher-avatar c1">김</div></div>
           <div class="teacher-info"><div class="teacher-subject">국어</div><div class="teacher-name">김지수 강사</div><div class="teacher-career">서울대 국어교육과 졸업<br>수능 국어 15년 경력</div></div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=533&q=80&auto=format&fit=crop" alt="박민준 강사" /></div>
+          <div class="teacher-photo"><div class="teacher-avatar c2">박</div></div>
           <div class="teacher-info"><div class="teacher-subject">수학</div><div class="teacher-name">박민준 강사</div><div class="teacher-career">KAIST 수학과 졸업<br>수능 수학 12년 경력</div></div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo"><img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=533&q=80&auto=format&fit=crop" alt="이수연 강사" /></div>
+          <div class="teacher-photo"><div class="teacher-avatar c3">이</div></div>
           <div class="teacher-info"><div class="teacher-subject">영어</div><div class="teacher-name">이수연 강사</div><div class="teacher-career">연세대 영어영문학과 졸업<br>수능 영어 10년 경력</div></div>
         </div>
         <div class="teacher-card">
-          <div class="teacher-photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=533&q=80&auto=format&fit=crop" alt="최준혁 강사" /></div>
+          <div class="teacher-photo"><div class="teacher-avatar c4">최</div></div>
           <div class="teacher-info"><div class="teacher-subject">수학</div><div class="teacher-name">최준혁 강사</div><div class="teacher-career">고려대 수학과 졸업<br>수능 수학 8년 경력</div></div>
         </div>
       </div>
@@ -203,7 +203,7 @@
     <div class="result-inner">
       <div class="section-head">
         <div class="section-tag">Results</div>
-        <h2 class="section-title" style="color:#fff;">2024 합격 실적</h2>
+        <h2 class="section-title" style="color:#fff;">2026 합격 실적</h2>
         <p class="section-sub" style="color:rgba(255,255,255,0.45);">정상학원 수강생들의 합격을 진심으로 축하합니다.</p>
       </div>
       <div class="result-grid">
@@ -235,7 +235,7 @@
         <a href="consult.html">상담 신청</a>
       </div>
     </div>
-    <div class="footer-copy">© 2025 정상학원. All rights reserved.</div>
+    <div class="footer-copy">© 2026 정상학원. All rights reserved.</div>
   </footer>
 
   <a href="consult.html" class="float-btn" id="floatBtn">무료 상담 신청</a>
