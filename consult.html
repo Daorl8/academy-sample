@@ -55,6 +55,11 @@
     .info-key { color: var(--gray); min-width: 56px; flex-shrink: 0; }
     .info-val { color: #333; line-height: 1.7; }
     .map-box { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+    .map-links { display: flex; gap: 8px; margin-top: 10px; }
+    .map-link { flex: 1; text-align: center; padding: 11px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border); color: var(--navy); transition: background 0.2s, border-color 0.2s; }
+    .map-link:hover { background: var(--light); }
+    .map-link.naver { color: #03C75A; border-color: #03C75A; }
+    .map-link.kakao { color: #3A1D00; background: #FEE500; border-color: #FEE500; }
     .map-box iframe { width: 100%; height: 100%; border: none; filter: grayscale(20%); }
     .process-list { display: flex; flex-direction: column; gap: 0; }
     .process-item { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
@@ -197,8 +202,10 @@
           <div class="info-row"><span class="info-key">전화</span><span class="info-val">02-0000-0000</span></div>
           <div class="info-row"><span class="info-key">운영시간</span><span class="info-val">평일 09:00 – 22:00<br>토요일 09:00 – 18:00<br>일요일 휴원</span></div>
         </div>
-        <div class="map-box">
-          <iframe src="https://maps.google.com/maps?q=강남구&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" title="정상학원 위치"></iframe>
+        <div class="map-box"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=127.0535%2C37.4930%2C127.0735%2C37.5060&amp;layer=mapnik&amp;marker=37.4995%2C127.0635" loading="lazy"></iframe></div>
+        <div class="map-links">
+          <a href="https://map.naver.com/p/search/%EB%8C%80%EC%B9%98%EB%8F%99" target="_blank" rel="noopener" class="map-link naver">네이버 지도</a>
+          <a href="https://map.kakao.com/?q=%EB%8C%80%EC%B9%98%EB%8F%99" target="_blank" rel="noopener" class="map-link kakao">카카오맵</a>
         </div>
         <div class="info-card">
           <div class="info-card-title">📋 상담 진행 절차</div>
@@ -219,7 +226,7 @@
       <div><div class="footer-logo">정상<span>학원</span></div><div class="footer-info">서울특별시 ○○구 ○○로 00길 00 · 대표번호: 02-0000-0000<br>운영시간: 평일 09:00 – 22:00 · 토요일 09:00 – 18:00</div></div>
       <div class="footer-links"><a href="courses.html">강좌 안내</a><a href="teachers.html">강사 소개</a><a href="notice.html">공지사항</a><a href="consult.html">상담 신청</a></div>
     </div>
-    <div class="footer-copy">© 2025 정상학원. All rights reserved.</div>
+    <div class="footer-copy">© 2026 정상학원. All rights reserved.</div>
   </footer>
 
   <script src="common.js"></script>
