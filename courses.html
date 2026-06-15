@@ -30,6 +30,9 @@
     .tag-open { display: inline-block; padding: 3px 10px; background: #dcfce7; color: #166534; font-size: 0.78rem; font-weight: 500; border-radius: 2px; }
     .tag-full { display: inline-block; padding: 3px 10px; background: #fee2e2; color: #991b1b; font-size: 0.78rem; font-weight: 500; border-radius: 2px; }
     @media (max-width: 860px) { .class-grid { grid-template-columns: 1fr; } }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+    .timetable { min-width: 600px; }
+    html, body { overflow-x: hidden; }
   </style>
 </head>
 <body>
@@ -106,14 +109,14 @@
           </div>
         </div>
       </div>
-      <table class="timetable">
+      <div class="table-scroll"><table class="timetable">
         <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
         <tbody>
           <tr><td>기초반</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>수능완성반</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>최상위반</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>10:00</td><td><span class="tag-full">마감</span></td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <!-- 영어 -->
@@ -157,14 +160,14 @@
           </div>
         </div>
       </div>
-      <table class="timetable">
+      <div class="table-scroll"><table class="timetable">
         <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
         <tbody>
           <tr><td>기초반</td><td>—</td><td>18:00</td><td>—</td><td>18:00</td><td>—</td><td>10:00</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>수능완성반</td><td>—</td><td>20:00</td><td>—</td><td>20:00</td><td>—</td><td>13:00</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>1등급반</td><td>17:00</td><td>—</td><td>17:00</td><td>—</td><td>17:00</td><td>—</td><td><span class="tag-full">마감</span></td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <!-- 수학 -->
@@ -208,14 +211,14 @@
           </div>
         </div>
       </div>
-      <table class="timetable">
+      <div class="table-scroll"><table class="timetable">
         <thead><tr><th>반</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>상태</th></tr></thead>
         <tbody>
           <tr><td>개념완성반</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>유형훈련반</td><td>—</td><td>16:00</td><td>—</td><td>16:00</td><td>—</td><td>10:00</td><td><span class="tag-open">모집중</span></td></tr>
           <tr><td>킬러문항반</td><td>19:00</td><td>—</td><td>19:00</td><td>—</td><td>19:00</td><td>13:00</td><td><span class="tag-full">마감</span></td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div style="text-align:center; margin-top:48px;">
