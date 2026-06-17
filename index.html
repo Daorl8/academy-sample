@@ -246,10 +246,13 @@
       floatBtn.classList.toggle('visible', window.scrollY > 200);
     });
     const fadeEls = document.querySelectorAll('.course-card, .teacher-card, .result-card, .stat-box');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
-    }, { threshold: 0.08 });
-    fadeEls.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; io.observe(el); });
+    const enableFade = window.matchMedia('(min-width: 861px)').matches && 'IntersectionObserver' in window;
+    if (enableFade) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      fadeEls.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; io.observe(el); });
+    }
   </script>
 </body>
 </html>
