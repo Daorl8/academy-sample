@@ -261,8 +261,21 @@
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } });
       }, { threshold: 0.08 });
-      fadeEls.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; io.observe(el); });
+      fadeEls.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.45s ease, transform 0.45s ease'; io.observe(el); });
+      function rvAcad(){ fadeEls.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight*0.95 && r.bottom>0){ el.style.opacity='1'; el.style.transform='translateY(0)'; } }); }
+      document.addEventListener('visibilitychange', function(){ if(!document.hidden) setTimeout(rvAcad,60); });
+      window.addEventListener('load', function(){ setTimeout(rvAcad,1200); });
     }
   </script>
+<script>
+/* 푸터 진입 시 플로팅 CTA 숨김(겹침·중복 방지) */
+(function(){
+  var fb=document.getElementById("floatBtn"), ft=document.querySelector("footer");
+  if(!fb||!ft) return;
+  fb.style.transition="opacity .25s";
+  function chk(){ var r=ft.getBoundingClientRect(); if(r.top<innerHeight){ fb.style.opacity="0"; fb.style.pointerEvents="none"; } else { fb.style.opacity=""; fb.style.pointerEvents=""; } }
+  window.addEventListener("scroll",chk,{passive:true}); window.addEventListener("resize",chk); chk();
+})();
+</script>
 </body>
 </html>
