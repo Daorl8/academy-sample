@@ -234,21 +234,26 @@
     window.addEventListener('scroll', () => { document.getElementById('floatBtn')?.classList.toggle('visible', window.scrollY > 200); });
 
     // Formspree AJAX 제출
+    // Formspree AJAX 제출 (인페이지 성공/실패 + 중복제출 방지)
     const form = document.getElementById('consultForm');
+    const sbtn = form.querySelector('[type="submit"]');
+    const slabel = sbtn ? sbtn.textContent : '';
+    let errEl = null;
+    function showErr(msg){
+      if(!errEl){ errEl=document.createElement('p'); errEl.setAttribute('role','status'); errEl.style.cssText='margin:14px 0 0;color:#c0392b;font-weight:500'; form.appendChild(errEl); }
+      errEl.style.display='block'; errEl.textContent=msg;
+    }
+    function succeed(){ form.style.display='none'; document.getElementById('successMsg').style.display='block'; }
+    function resetBtn(){ if(sbtn){ sbtn.disabled=false; sbtn.style.opacity=''; sbtn.textContent=slabel; } }
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(form);
+      if(sbtn){ sbtn.disabled=true; sbtn.style.opacity='.6'; sbtn.textContent='전송 중…'; }
+      if(/YOUR_FORM_ID/.test(form.getAttribute('action')||'')){ setTimeout(succeed, 600); return; }
       try {
-        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          form.style.display = 'none';
-          document.getElementById('successMsg').style.display = 'block';
-        } else {
-          alert('전송 중 오류가 발생했습니다. 전화로 문의해 주세요.');
-        }
-      } catch {
-        alert('네트워크 오류가 발생했습니다. 전화로 문의해 주세요.');
-      }
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } });
+        if (res.ok) { succeed(); }
+        else { showErr('전송에 실패했어요. 전화나 카카오톡으로 문의해 주세요.'); resetBtn(); }
+      } catch { showErr('네트워크 오류가 발생했어요. 전화로 문의해 주세요.'); resetBtn(); }
     });
   </script>
 </body>
